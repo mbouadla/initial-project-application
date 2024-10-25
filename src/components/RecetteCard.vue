@@ -1,38 +1,38 @@
 <template>
-  <div class="recette-card">
-    <img :src="recette.image" alt="Image de la recette" />
-    <h3>{{ recette.titre }}</h3>
-    <p>{{ recette.description }}</p>
-    <FavoriteButton :recette="recette" />
+  <div class="recette-card" v-if="recette">
+   
+    <h3>{{ recette.nom }}</h3>
+    <img src="/images/chakchouka-algerienne.jpg" alt="recette.nom" width="150"  height="150"/>
+    <ul>
+      <li  v-for="ingredient in recette.description">
+        {{ ingredient }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import FavoriteButton from './FavoriteButton.vue';
-
 export default {
   props: {
     recette: {
       type: Object,
-      required: true
-    }
+      required: true, // S'assure que la prop est obligatoire
+    },
   },
-  components: {
-    FavoriteButton
-  }
 };
 </script>
 
 <style scoped>
 .recette-card {
   border: 1px solid #ccc;
-  padding: 16px;
+  padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 .recette-card img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 </style>

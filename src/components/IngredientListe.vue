@@ -4,7 +4,7 @@
       <div class="grid-item ingredients">
         <label>Par Ingrédient</label>
         <div>
-          <input type="checkbox" v-model="selectedFilters.ingredient" value="Amande" /> Amande
+          <input type="checkbox" v-model="selectedFilters.ingredient" value="Amande" /> Amande 
           <input type="checkbox" v-model="selectedFilters.ingredient" value="Raisins secs" /> Raisins secs
           <input type="checkbox" v-model="selectedFilters.ingredient" value="Dattes" /> Dattes
           <input type="checkbox" v-model="selectedFilters.ingredient" value="Figues" /> Figues
@@ -47,7 +47,7 @@
         <label>Par difficulté</label>
         <div>
           <input type="checkbox" v-model="selectedFilters.difficulty" value="Facile" /> Facile
-          <input type="checkbox" v-model="selectedFilters.difficulty" value="Confirmé" /> Confirmé
+          <input type="checkbox" v-model="selectedFilters.difficulty" value="Intermédiaire" /> Intermédiaire
           <input type="checkbox" v-model="selectedFilters.difficulty" value="Confirmé" /> Confirmé
           <input type="checkbox" v-model="selectedFilters.difficulty" value="Expert" /> Expert
         </div>
@@ -66,10 +66,14 @@
       <button type="submit">OK</button>
     </form>
   </div>
+  
 </template>
 
 <script>
+
 export default {
+ 
+
   data() {
     return {
       selectedFilters: {

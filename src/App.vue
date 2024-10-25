@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <h1>Saveurs Maghrébine</h1>
+    
     <!-- Header avec navigation principale -->
     <header>
-      
+      <RouterLink to="/"> Saveurs Maghrébine </RouterLink>
       <nav>
         <ul>
           <li><router-link to="/Theme">Thème</router-link></li>
+          <li><router-link to="/Recherche">Recherche</router-link></li>
           <li><router-link to="/Ingredient">Ingrédient</router-link></li>
           <li><router-link to="/Favoris">Favoris</router-link></li>
-          <li><router-link to="/AjouterRecette">AjouterRecette</router-link></li>
+          <li><router-link to="/AjouterRecette">Ajouter Recette</router-link></li>
           <li><router-link to="/Offline">Hors Connexion</router-link></li>
-          <li><router-link to="/Connexion"> Connexion</router-link></li>
+          <li><router-link to="/Connexion">Connexion</router-link></li>
         </ul>
-         
-        
       </nav>
-     
     </header>
-
     <!-- Vue actuelle affichée par le routeur -->
-    <router-view />
-    
-      
+    <RouterView />
 
     <!-- Footer avec liens réseaux sociaux et navigation -->
     <footer>
@@ -34,7 +29,7 @@
             <li><router-link to="/contact">Contact</router-link></li>
           </ul>
         </nav>
-        <div> 
+        <div>
           <p> Saveurs Maghrébine 2024 </p>
         </div>
         <div class="social-links">
@@ -45,32 +40,29 @@
       </div>
     </footer>
   </div>
- 
+  
 </template>
 
 <script>
-import Search from './views/Search.vue'
+import { RouterLink, RouterView } from 'vue-router';
+
 export default {
   components: {
-    Search,
-  },
-  data() {
-    return {
-      searchQuery: "", // Texte tapé dans la barre de recherche
-      
-    };
-  },
-}
-  
+    RouterLink,
+    RouterView
+  }
+};
 </script>
 
 <style scoped>
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;}
+  text-align: center;
+}
 
 header {
-  background-color: #42b983;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
   padding: 10px;
   color: white;
 }
@@ -159,6 +151,7 @@ footer a:hover {
   display: flex;
   justify-content: center;
 }
+
 .avis-container {
   margin: 20px;
 }
